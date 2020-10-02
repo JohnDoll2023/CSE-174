@@ -1,0 +1,21 @@
+/*
+ * Name: John Doll
+ * Instructor: Meisam Amjad
+ * CSE 174 Section J
+ * Date: October 25, 2019
+ * Filename: lab9
+ * Description:
+ */
+
+import java.util.Scanner;
+
+public class lab9 {
+   
+   public static void main(String [] args) {
+      Scanner in = new Scanner(System.in);
+      System.out.println("Enter a number: ");
+      int limit = in.nextInt();
+      
+         
+   }
+}

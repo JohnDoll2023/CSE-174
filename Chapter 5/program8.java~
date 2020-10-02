@@ -1,0 +1,21 @@
+/*
+ * Name: John Doll
+ * Instructor: Meisam Amjad
+ * CSE 174 Section J
+ * Date: October 20, 2019
+ * Filename: program8.java
+ * Description: Program identifies largest and smallest number in a
+ * list of numbers and counties the occurences of each digit in one
+ * number
+ */
+
+import java.util.Scanner;
+
+public class program8 {
+   
+   static Scanner in = new Scanner(System.in);
+   public static void main(String [] args) {
+      
+   }
+}
+      

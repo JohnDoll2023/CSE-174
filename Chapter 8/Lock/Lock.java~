@@ -1,0 +1,32 @@
+/**
+   A simulated lock with digit buttons.
+*/
+public class Lock
+{
+   private int combination = 1729; 
+   private int input;
+   
+   /**
+      Simulates a digit button push.
+      @param button a digit 0 ... 9
+   */
+   public void push(int button)
+   {
+      int count = 0;
+      int check = 0;
+      if(button==combination.charAt(count))
+         check++;
+      count++;
+   }
+   
+   /**
+      Simulates a push of the open button.
+      @return true if the lock opened
+   */
+   public boolean open()
+   {
+      if(check==4)
+         return true;
+      return false;
+   }
+}

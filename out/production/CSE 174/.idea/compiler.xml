@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <excludeFromCompile>
+      <file url="file://$PROJECT_DIR$/Chapter 8/van2/VanTester.java" />
+      <file url="file://$PROJECT_DIR$/Chapter 8/van2/Van.java" />
+      <file url="file://$PROJECT_DIR$/Chapter 3/Program 4/DonutBoxes.java" />
+      <file url="file://$PROJECT_DIR$/Chapter 3/Program 4/SwapLetters.java" />
+      <file url="file://$PROJECT_DIR$/Chapter 3/Program 4/WeekDays.java" />
+      <file url="file://$PROJECT_DIR$/Chapter 3/Program 4/IntGenerator.java" />
+      <file url="file://$PROJECT_DIR$/Chapter 3/lab4/lab4.java" />
+      <file url="file://$PROJECT_DIR$/Chapter 5/Test.java" />
+      <file url="file://$PROJECT_DIR$/Chapter 5/Program 6/Boxes.java" />
+      <file url="file://$PROJECT_DIR$/Chapter 5/Program 6/Cylinder.java" />
+      <file url="file://$PROJECT_DIR$/Chapter 5/Program 6/EarthTemp.java" />
+      <file url="file://$PROJECT_DIR$/Chapter 2/Clock.java" />
+    </excludeFromCompile>
+  </component>
+</project>

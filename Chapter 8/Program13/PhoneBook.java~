@@ -1,0 +1,195 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+/* 
+ * PhoneBook class
+ * CSE 174 fall 2019
+ * John Doll
+ * CSE 174 Section J
+ * 
+ * The PhoneBook class simulates a simple phone book application.
+ * Copyright(C) Nov 2019
+ */
+
+public class PhoneBook {
+  
+  //Adds a contact, with the identity of phone number and the digits
+  //of the phone number, if the name of the person is not already in
+  //the list
+  public static void add(ArrayList<ContactInfo> list, String name, 
+                         String label, String pNum) {
+     boolean value = true;
+     for(ContactInfo test: list){
+        if(test.getName().equals(name)) {
+           System.out.println("The name already exists!\n");
+           value=false; } }
+     if(value) {
+        ArrayList<Phone> testobject = new ArrayList<Phone>();
+        testobject.add(new Phone(label, pNum));
+        list.add(new ContactInfo(name, testobject));
+        System.out.println("*The contact has been added " +
+                           "successfully*\n"); }  }
+
+  //Adds a phone number and its identity to a certain contact if that
+  //contact exists
+  public static void append(ArrayList<ContactInfo> list, String name,     
+                            String label, String pNum) { 
+     boolean testvalue = true;
+     for(ContactInfo test: list) {
+        if(test.getName().equals(name)) {
+           for(Phone phone: test.getPhones()) {
+              if(!phone.getLabel().equals(label) && 
+                 !phone.getPhonNum().equals(pNum)) {
+                 test.addPhone(new Phone(label,pNum));
+                 testvalue = false; 
+                 break;   }  }  }  }
+     append2(testvalue);
+  }
+  
+  public static void append2(boolean realvalue) {
+     if(realvalue) {
+        System.out.println("The label/number already exists for this "
+                           + "person!\n");
+     }
+     else if (!realvalue) {
+        System.out.println("*The number has been added " 
+                                       + "successfully*\n");
+     }
+  }
+
+  //Prints the phone number and its identity for a certain person if
+  //they already exist in the phone book
+  public static void display(ArrayList<ContactInfo> list, 
+                             String name) { 
+     boolean value = true;
+     for(ContactInfo test: list) {
+        if(test.getName().equals(name)) {
+           for(Phone phone: test.getPhones()) {
+              System.out.println(phone.getLabel() + ":  " + 
+                                 phone.getPhonNum());
+              value = false;   }
+           System.out.println("");  }   }
+     if(value)
+        System.out.println("Couldn't find the name\n");
+  } 
+  
+  //Prints all the names of the people in the phonebook and their
+  //phone numbers and the phone number identity
+  public static void displayAll(ArrayList<ContactInfo> list){ 
+     if(list.size()==0)
+        System.out.println("The list is Empty!\n");
+     else{
+        for(ContactInfo test: list) {
+           System.out.println(test.getName());
+           for(Phone phone: test.getPhones()) {
+              System.out.println("     " + phone.getLabel() + ":  " + 
+                                 phone.getPhonNum());
+           }   }
+        System.out.println("");
+     }
+  }
+  
+  //Removes an entire contact from the phonebook
+  public static void remove(ArrayList<ContactInfo> list, String name)
+  { 
+     if(list.size()==0)
+        System.out.println("The list is empty!\n");
+     else{
+        for(int i = 0; i <list.size(); i++) {
+           if(list.get(i).getName().equals(name)) {
+              list.remove(list.get(i));
+              System.out.println("*Contact is removed successfully*");
+              System.out.println();
+              break;   }   }   }   } 
+  
+  // main method
+  public static void main(String[] args) {
+    ArrayList<ContactInfo> list = new ArrayList<ContactInfo>();
+    Scanner keyboard = new Scanner(System.in);
+    int choice = 0;
+    while(choice!=6) {
+       System.out.printf("1. Add a Contact\n2. Add a new number to an"
+                         + " old contact\n3. Display a contact\n4. " +
+                         "Display All\n5. Remove a contact\n6. Exit\n"
+                         + "Enter your choice: ");
+       choice = Integer.parseInt(keyboard.nextLine());
+       if(choice!=6)
+          menu(choice, list, keyboard);   }
+  }
+  
+  
+  public static void menu(int choice, ArrayList<ContactInfo> list,
+                          Scanner keyboard) {
+     switch (choice) {
+          case 1: switch1(list, keyboard); break;
+          case 2: switch2(list, keyboard); break;
+          case 3: switch3(list, keyboard); break;
+          case 4: switch4(list, keyboard); break;
+          case 5: switch5(list, keyboard); break;
+          default: System.out.println("Invalid input!!\n");
+     }
+  }
+  
+  //Gets the information to add a contact and calls the method to
+  //add a contact
+  public static void switch1(ArrayList<ContactInfo> list, Scanner
+                                keyboard) {
+     System.out.println("---Add a contact");
+     System.out.print("Name:  ");
+     String testName = keyboard.nextLine();
+     System.out.print("Label: ");
+     String testLabel = keyboard.nextLine();
+     System.out.print("Phone number (i.e. (513)111-1111): ");
+     String testpNum = keyboard.nextLine();
+     add(list, testName, testLabel, testpNum);
+  }
+  
+  //Gets the information to add a phone number and its identifer to
+  //add to a certain contact and calls the method to add the phone
+  //number and its identifier
+  public static void switch2(ArrayList<ContactInfo> list, Scanner
+                                keyboard) {
+     System.out.print("Name:  "); boolean value = false;
+     String test1Name = keyboard.nextLine();
+     for(ContactInfo test: list) {
+        if(test.getName().equals(test1Name)) {
+           value = true;  }   }
+     if(!value) System.out.println("Couldn't find the name\n");
+     if(value) {   System.out.print("Label: ");
+           String test2Label = keyboard.nextLine();
+           System.out.print("Phone number (i.e. (513)111-1111): ");
+           String test2pNum= keyboard.nextLine();
+           append(list, test1Name, test2Label, test2pNum);   }   }
+  
+  //Gets the name of the person to display and calls the method to
+  //display their info
+  public static void switch3(ArrayList<ContactInfo> list, Scanner
+                                keyboard) {
+     System.out.println("---Display a contact");
+     System.out.print("Name:  ");
+     String test2Name = keyboard.nextLine();
+     display(list, test2Name);
+  }
+  
+  //Calls the method to display everyone in the phonebook
+  public static void switch4(ArrayList<ContactInfo> list, Scanner
+                                keyboard) {
+     System.out.println("---Display all");
+     displayAll(list);
+  }
+  
+  //Gets the name of the person to removed from the phonebook and
+  //calls the method to remove them
+  public static void switch5(ArrayList<ContactInfo> list, Scanner
+                                keyboard) {
+     boolean value = true;
+     System.out.println("---Remove a contact");
+     System.out.print("Name:  ");
+     String test3Name = keyboard.nextLine();
+     for(ContactInfo test: list) {
+        if(test.getName().equals(test3Name)) {
+           value = false; }   }
+     if(!value) remove(list,test3Name);
+     if(value) System.out.println("Couldn't find the name!\n");
+  } 
+}

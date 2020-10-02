@@ -1,0 +1,17 @@
+public class Robot {
+   public String name;
+   
+   public Robot(){
+      name="";
+   }
+   public Robot(String argName){
+      name=argName;
+   }
+   
+   public void sayName(){
+     System.out.print(); 
+   }
+   public String getName(){
+      return name;
+   }
+}

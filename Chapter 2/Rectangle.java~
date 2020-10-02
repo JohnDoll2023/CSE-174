@@ -1,0 +1,16 @@
+public class Rectangle
+{
+   public static void main(String [] args)
+   {
+      //Declaring variables
+      double width = 2.0
+      double height = 3.0
+         
+      //Writing formulas
+      double area = width*height
+      double perimeter = 2*(width+height)
+      System.out.println("Area: " + area\n + "Perimeter: " perimeter);
+   }
+}
+      
+         

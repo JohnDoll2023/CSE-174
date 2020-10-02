@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class WordReader {
+   public static void main(String [] args) {
+      Scanner in = new Scanner(System.in);
+      System.out.println("Enter a word:");
+      String str = in.nextLine();
+      String lastchar = Character.toString(str.charAt(str.length()-1));
+      String firstchar = Character.toString(str.charAt(0));
+      if (str.length() < 5) {
+         str = "short";
+      }
+      else if(str.length() >= 10) {
+         str = "long ";
+      }
+      System.out.print("The string you entered is " + str);
+      if (lastchar == "y") {
+         System.out.print("and ends in y");
+      }
+      else if(lastchar == "y") {
+         System.out.print("and doesn't end in y");
+      }
+      /*if(str.toUpperCase(firstchar).equals(str.toUpperCase(lastchar))) {
+         System.out.print(" and has the same first and last letter.");
+      }
+      else if (str.ignoreCase(firstchar)!=(lastchar)) {
+         System.out.print(" and doesn't have the same first and last letter.");
+      }
+      */
+   }
+}

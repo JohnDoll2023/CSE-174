@@ -1,0 +1,32 @@
+/* Name: John Doll
+ * Instructor: Meisam Amjad
+ * CSE 174 Section J
+ * Date: 9/25/19
+ * Filename: WednesdayHomework.java
+ * Description: runs a quiz
+ */
+
+import java.util.Scanner;
+
+public class WednesdayHomework 
+{
+   public static void main(String [] args) 
+   {
+      Scanner in = new Scanner(System.in);
+      
+      System.out.println("Welcome to the quiz, what is your name?:");
+      name = in.nextLine();
+      
+      System.out.println("true or false: To compare two char values" +
+                         " use the equals() method");
+      System.out.println("Your answer:");
+      truefalse = in.nextLine();
+      if (truefalse.equals("true") {
+             System.out.println("Incorrect: the correct answer is" +
+                                " false");
+      }
+          else if (truefalse.equals("false") {
+             System.out.println("Correct");
+          }
+                   
+      

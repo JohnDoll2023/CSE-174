@@ -1,0 +1,39 @@
+/*
+ * Lab 12
+ * Meisam Amjad
+ * 
+ * A lab in which you analyze the performance of
+ * Bubble Sort and Binary Search
+ *
+ */
+import java.util.Random;
+
+public class SortSearchLab {
+   public static void main(String[] args) {
+      
+      // Creates an array of of 5 elements with
+      // values ranging from 0 to 49:
+      int[] data = randomArray(49, 5);
+      bubbleSort(data);
+      
+      
+      
+      
+      
+      
+      for (int n : data) System.out.print(n + " ");
+      System.out.println();
+      
+   }
+   
+   // Sorting methods have a return type of void,
+   // typically.  That's because the method has
+   // access to the original array and can directly modify
+   // it.  In other words, it does not need to create
+   // and return a new array.  It just changes the existing array.
+   public static void bubbleSort(int[] data) {
+      
+      
+      
+      
+   }

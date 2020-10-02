@@ -1,0 +1,87 @@
+/*
+ * Name: John Doll
+ * Instructor: Meisam Amjad
+ * CSE 174 Section J
+ * Date: October 4, 2019
+ * Filename: Cylinder.java
+ * Description: Gives different properties of a cylinder based on user
+ * input
+ */
+
+import java.util.Scanner;
+
+public class Cylinder {
+   public static void main(String [] args) {
+      
+      Scanner in  = new Scanner(System.in);
+      
+      //Creating user menu
+      System.out.println("--Menu--");
+      System.out.printf("a) Area of a circle\nb) Area of the surface "
+                        + "of a cylinder\nc) Volume of a " +
+                        "cylinder\nEnter your choice: ");
+      String choice = in.nextLine();
+      
+      //Declaring variables
+      double radius, height;
+      
+      //Makes calculations based on user choice, asks user for more 
+      //variavles, and references other methods to make calculations
+      switch(choice.toLowerCase()) { 
+         case "a":
+            System.out.print("Enter the radius");
+            radius = in.nextDouble();
+            System.out.printf("The area of the circle is %.3f",
+                               circArea(radius));
+            break;
+         case "b":
+            System.out.print("Enter the radius");
+            radius = in.nextDouble();
+            System.out.print("Enter the height");
+            height = in.nextDouble();
+            System.out.printf("The area of the surface of the " + 
+                               "cylinder is %.3f", 
+                              cylArea(radius, height));
+            break;
+         case "c":
+            System.out.print("Enter the radius");
+            radius = in.nextDouble();
+            System.out.print("Enter the height");
+            height = in.nextDouble();
+            System.out.printf("The volume of the cylinder is %.3f",
+                               cylVolume(radius, height));
+            break;
+         default: System.out.println("The selection is not correct. " 
+                                     + "Program terminated.");
+      }
+   }
+      /**
+        * Area of a circle
+        * @param radius double type radius of circle
+        * @return double type area of circle
+        */
+      public static double circArea(double radius) {
+         return Math.PI * radius * radius;
+      }
+      
+      /**
+       * Surface area of a cylinder
+       * @param radius double type radius of circle
+       * @param height double type height of circle
+       * @return double type volume of cylinder
+       */
+      public static double cylArea(double radius, double height) {
+         return ((2 * Math.PI * radius * radius) + (Math.PI * radius *
+                                                   2 * height));
+      }
+      
+      /**
+       * Volume of a cylinder
+       * @param radius double type radius of circle
+       * @param height double type height of circle
+       * @return double type volume of cylinder
+       */
+      public static double cylVolume(double radius, double height) {
+         return Math.PI * radius * radius * height;
+      }
+}

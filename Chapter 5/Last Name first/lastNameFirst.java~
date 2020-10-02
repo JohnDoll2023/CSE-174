@@ -1,0 +1,8 @@
+public class lastNameFirst {
+   public static String lastNameFirst(String name) {
+      String firstName, lastname;
+      String name = firstName + lastName;
+      index = name.IndexOf(' ');
+      firstname = firstName.substring(0,index);
+      lastname = lastname.substring(index);
+      return lastName, firstName;

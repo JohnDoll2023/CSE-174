@@ -1,0 +1,6 @@
+public class Indexer {
+   public static int FirstOccurence(String name, String search) {
+      int location = name.indexOf(search);
+      return location;
+   }
+}

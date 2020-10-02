@@ -1,0 +1,11 @@
+/* Week 5 lab
+ * Calculator.java
+ * John Doll
+ * Instructor: Meisam Amjad
+ * Performs a variety of calculations based on user input/
+ */
+
+import java.util.Scanner;
+
+public class Calculator {
+}

@@ -1,0 +1,83 @@
+/* 
+ * Name: John Doll
+ * Instructor: Meisam Amjad
+ * CSE 174 Section J
+ * Date: October 18, 2019
+ * Filename: lab8
+ * Description:
+ */
+
+import java.util.Scanner;
+
+public class lab8{
+   public static void main(String [] args) {
+      
+      Scanner in = new Scanner(System.in);
+      
+      //Declare variables and ask user for words
+      System.out.println("How many words will you enter?");
+      double limit = in.nextInt();
+      int numwords = 0;
+      int minLength = Integer.MAX_VALUE;
+      int maxLength = Integer.MIN_VALUE;
+      int qwords = 0;
+      int vowelWords = 0;
+      String userwords = "";
+      
+      //Determine whether or not to run while loop based on user input
+      if (limit == 0)
+         System.out.println("NO WORDS ENTERED.");
+      
+      else {
+         
+         //Gets all the words from the user, and calculates all 
+         //outputs
+         while (numwords < limit) {
+         System.out.print("Enter word #" + ++numwords + ":");
+         String wordEntry = in.next();
+         maxLength = Math.max(maxLength, wordEntry.length());
+         minLength = Math.min(minLength, wordEntry.length());
+         qwords = (wordEntry.indexOf("q") == -1) ? qwords : ++qwords;
+         vowelWords = ((startsWithVowel(wordEntry) == true) ? 
+                          ++vowelWords : vowelWords);
+         userwords = userwords + wordEntry + " ";
+      }
+         //Makes plurality of print statements match if number is 1
+         String pluralWord = (limit == 1) ? " word: " : " words: ";
+         
+         //Prints the results
+         System.out.println("RESULTS:...");
+         System.out.println("Average word length: " + 
+                            (userwords.length()-limit)/limit);
+         System.out.println("Length of shortest word: " + minLength);
+         System.out.println("Lenght of longest word: " + maxLength);
+         System.out.println("Words containing q: " + qwords);
+         System.out.println("Words starting with a vowel: " + 
+                            vowelWords);
+         System.out.println("You entered " + numwords + pluralWord + 
+                            userwords);
+      }
+   }
+   
+   //Method to determine if word starts with a vowel
+   public static boolean startsWithVowel(String wordEntry) {
+      boolean vowelWords = false;
+      switch (wordEntry.charAt(0)){
+         case 'a': vowelWords = true;
+         break;
+         case 'e': vowelWords = true;
+         break;
+         case 'i': vowelWords = true;
+         break;
+         case 'o': vowelWords = true;
+         break;
+         case 'u': vowelWords = true;
+         break;
+         default: vowelWords = false;
+         break;
+         
+      }
+      return vowelWords;
+            
+   }
+}

@@ -1,0 +1,17 @@
+public class BlocksTraveled
+{
+   public static void main(String [] args)
+   {
+      //Declaring variables
+      int h1 = 5;
+      int h2 = 10;
+      int v1 = 2;
+      int v2 = 8;
+         
+      //Creating formula
+      int height = Math.abs(h2 - h1);
+      int length = Math.abs(v2 - v1);
+      int blocksTraveled = height + length;
+      System.out.println("Blocks Traveled: " + blocksTraveled);
+   }
+}

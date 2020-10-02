@@ -1,0 +1,25 @@
+/* Name: John Doll
+ * Date: September 13, 2019
+ * Instructor: Meisam Amjad
+ * Filename: Lab3
+ * Description: Gets user's name, phone number, and test scores, then
+ * averages test scores
+ */
+
+import java.util.Scanner;
+
+public class Lab3 {
+   public static void main(String [] args) {
+      System.out.printf("Enter the first and last name: \n");
+      Scanner in = new Scanner(System.in);
+      String in = in.next();
+      System.out.printf("Enter the phone number in this format (___) ___ - ____ :\n");
+      Double in = in.nextDouble();
+      System.out.printf("Enter 3 scores :\n");
+      Double in = in.nextDouble();
+      System.out.printf("Name : %s", in.substring(0,5);
+                        }
+}
+
+                        
+      

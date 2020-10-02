@@ -1,0 +1,13 @@
+import java.util.Scanner;
+
+public class IndexerTest {
+   public static void main(String [] args) {
+      Scanner in = new Scanner(System.in);
+      System.out.print("Enter a word and character to be indexed: ");
+      String name = in.nextString();
+      String search = in.next();
+      System.out.print(FirstOccurence(name, search));
+   }
+}
+      
+      

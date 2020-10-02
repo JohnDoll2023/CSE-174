@@ -1,0 +1,21 @@
+public class Clock
+{
+   public static void main(String[] args)
+   {
+      //Defining clock hand variables
+      int xaxis = 0
+      int yaxis = 0
+      
+      //Clock instructions   
+      xaxis = yaxis
+      yaxis = -xaxis
+      
+      xaxis = yaxis
+      yaxis = -xaxis
+         
+      System.out.println(xaxis\nyaxis)
+   }
+}
+      
+      
+      

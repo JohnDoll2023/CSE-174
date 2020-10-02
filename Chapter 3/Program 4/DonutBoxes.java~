@@ -1,0 +1,29 @@
+/*
+ * Name: John Doll
+ * Instructor: Meisam Amjad
+ * CSE 174 Section J
+ * Date: September 20, 2019
+ * Filename: DonutBoxes
+ * Description: Calculates number of donut boxes needed based on user 
+ * input
+ * Test cases:
+ * These work correctly: 0-25, 96, 108
+ * These do not work: None found
+ */
+
+import java.util.Scanner;
+
+public class DonutBoxes {
+   public static void main(String [] args) {
+      Scanner in = new Scanner(System.in);
+      
+      //Prompts user for number of donuts
+      System.out.print("How many donuts?");
+      double donuts = in.nextDouble();
+      
+      //Calculates number of boxes needed
+      double boxes = (((donuts+5)/12));
+      System.out.printf("You will need %.0f boxes for the donuts.",
+                        boxes);
+   }
+}

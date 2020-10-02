@@ -1,0 +1,27 @@
+/* 
+ * Name: John Doll
+ * Instructor: Meisam Amjad
+ * CSE 174 Section J
+ * Date: November 1, 2019
+ * Filename: lab10
+ * Description: 
+ */
+
+import java.util.Scanner;
+
+public class lab10 {
+   
+   public static void main(String [] args) {
+      Scanner in = new Scanner(System.in);
+      System.out.println("How many random numbers do you want to " +
+                         "generate?");
+      num = in.nextInt();
+      System.out.println("What is the number of values for each " +
+                         "random draw?");
+      range = in.nextInt();
+      int [] generator = new int[num];
+      int i = 0;
+      for(i=i; i < num; i++)
+         value[i] = (int)(Math.random() * (range));
+   }
+}
